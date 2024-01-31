@@ -1,113 +1,127 @@
+"use client";
 import Image from "next/image";
+import icon1 from "../assets/Group 2.png";
+import icon2 from "../assets/Group 1.png";
+import logo from "../assets/logo.svg";
+import logo2 from "../assets/logo2.svg";
+import { FiEye, FiEyeOff, FiUnlock } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { useState } from "react";
+import { Checkbox, Typography } from "@material-tailwind/react";
+import Link from "next/link";
 
 export default function Home() {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  function togglePasswordVisibility(e) {
+    e.preventDefault();
+    setIsPasswordVisible(!isPasswordVisible);
+  }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="relative">
+      <div className="fixed top-0 right-0 z-10">
+        <Image src={icon1} alt="" unoptimized={true}/>
+      </div>
+
+      <div className="fixed bottom-0 left-0 z-10">
+        <Image src={icon2} alt="" unoptimized={true}/>
+      </div>
+
+      <div className="h-screen half_colored">
+        <div className="background_effect"></div>
+      </div>
+
+      <div className="w-2/5 m-auto h-full flex flex-col justify-center relative top-10 z-30">
+        <div className="w-full">
+          <div className="flex justify-center mb-6">
+            <Image src={logo} alt="" unoptimized={true}/>
+          </div>
+          <div className="box_shaddow bg-white border-[1px] border-solid border-[#F2F4F5] rounded-2xl px-16 py-8">
+            <h4 className="text-[#222] font-inter font-semibold text-[32px] text-center mb-5">
+              Login
+            </h4>
+            <form action="">
+              <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#667085] text-base font-normal font-inter"
+                  >
+                    E-mail
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="E-mail"
+                      className="input w-full text-base font-inter font-light border-[1px] border-solid border-[#F2F4F5] rounded-lg bg-[#F9FAFB] pl-11 pr-10 py-3 tracking-[-0.32px]"
+                    />
+                    <HiOutlineMail className="absolute top-1/2 left-3.5 translate-y-[-50%] text-[#98A2B3] text-[22px] font-bold" />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#667085] text-base font-normal font-inter"
+                  >
+                    Password
+                  </label>
+                  <div className="relative">
+                    <input
+                      type={isPasswordVisible ? "text" : "password"}
+                      placeholder="Password"
+                      className="input w-full text-base font-inter font-light border-[1px] border-solid border-[#F2F4F5] rounded-lg bg-[#F9FAFB] pl-11 pr-10 py-3 tracking-[-0.32px]"
+                    />
+                    <FiUnlock className="absolute top-1/2 left-3.5 translate-y-[-50%] text-[#98A2B3] text-[22px] font-bold" />
+                    <button
+                      className="absolute inset-y-0 right-0 flex items-center px-5 text-[#98A2B3] text-xl"
+                      onClick={togglePasswordVisibility}
+                    >
+                      {isPasswordVisible ? <FiEyeOff /> : <FiEye />}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center my-2.5">
+                <Checkbox
+                  label={
+                    <Typography className="font-poppins italic text-[#667085] font-normal">
+                      Remember Me
+                    </Typography>
+                  }
+                />
+                <Link
+                  href="/"
+                  className="text-[#55A0DE] font-inter font-normal italic"
+                >
+                  Forgot Password?
+                </Link>
+              </div>
+              <button className="mt-5 mb-8 gradient_bg w-full py-4 text-white font-poppins font-semibold rounded-lg">
+                Login
+              </button>
+            </form>
+          </div>
+
+          <ul className="flex justify-center gap-4 items-center text-[#667085] text-sm font-inter font-normal mt-28 mb-10">
+            <li>
+              <Link href="/">
+                <Image src={logo2} alt="" unoptimized={true}/>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">Contact</Link>
+            </li>
+            <li>
+              <Link href="/">Terms of Use</Link>
+            </li>
+            <li>
+              <Link href="/">Privacy Policy</Link>
+            </li>
+          </ul>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
