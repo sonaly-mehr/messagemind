@@ -9,8 +9,8 @@ module.exports = withMT({
   theme: {
     extend: {
       colors: {
-        // primary: "#FE2A6F",
-        // dark: "#1E1E1E",
+        dark: "#222222",
+        gray: "#667085"
       },
       fontFamily: {
         inter: ["var(--font-inter)"],

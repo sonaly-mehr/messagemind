@@ -17,45 +17,26 @@ body {
     text-wrap: balance;
   }
 }
-.half_colored {
-  /* position: relative;
-  overflow: hidden; */
-  z-index: 0;
-  position: fixed;
-  top: -250px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transform: skewY(-12deg);
+.heading{
+  @apply text-dark font-inter font-semibold text-2xl md:text-[32px] text-center
 }
-.background_effect{
-  transform-origin: 0%;
-  height: 1698px;
-  background-color: #FAFCFD;
-  position: absolute;
-  top: -1000px;
-  left: 0;
-  right: 0
+.subHeading{
+  @apply font-inter font-medium text-dark text-2xl
 }
-/* .half_colored::after {
-  content: "";
-  background-color: #fff;
-  position: absolute;
-  left: -50%;
-  right: -50%;
-  top: 64%;
-  height: 100%;
-  transform: rotate(342deg);
-} */
-
-.box_shaddow{
-  box-shadow: 0px 2px 16.9px 0px rgba(0, 0, 0, 0.08);
+.para{
+  @apply text-gray text-sm md:text-base font-normal font-inter
+}
+.profileSubHeading{
+  @apply text-[#4f4f4f] font-medium font-inter text-base
+}
+.contentLayout{
+  @apply flex justify-between border-b-[1px] border-solid border-[#e4e4e4]
+}
+.profileContent{
+  @apply basis-[55%] text-[#4f4f4f] font-inter font-normal
 }
 ::placeholder{
   font-style: italic;
-}
-.gradient_bg{
-  background: linear-gradient(94deg, #EA4B98 7.56%, #F6722B 98.9%)
 }
 .input{
   transition: all 0.2s ease-in-out; /* changed the timing to show the effect */
@@ -66,4 +47,9 @@ body {
   outline: none;
   border-color: #B8D9EF;
 }
-
+.box_shaddow{
+  box-shadow: 0px 2px 16.9px 0px rgba(0, 0, 0, 0.08);
+}
+.gradient_bg{
+  background: linear-gradient(94deg, #EA4B98 7.56%, #F6722B 98.9%)
+}
