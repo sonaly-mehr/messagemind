@@ -17,39 +17,42 @@ body {
     text-wrap: balance;
   }
 }
-.heading{
-  @apply text-dark font-inter font-semibold text-2xl md:text-[32px] text-center
+.heading {
+  @apply text-dark font-inter font-semibold text-2xl md:text-[32px];
 }
-.subHeading{
-  @apply font-inter font-medium text-dark text-2xl
+.subHeading {
+  @apply font-inter font-medium text-dark text-2xl;
 }
-.para{
-  @apply text-gray text-sm md:text-base font-normal font-inter
+.para {
+  @apply text-gray text-sm md:text-base font-normal font-inter;
 }
-.profileSubHeading{
-  @apply text-[#4f4f4f] font-medium font-inter text-base
+.profileSubHeading {
+  @apply text-[#4f4f4f] font-medium font-inter text-sm md:text-base;
 }
-.contentLayout{
-  @apply flex justify-between border-b-[1px] border-solid border-[#e4e4e4]
+.contentLayout {
+  @apply flex justify-between items-center border-b-[1px] border-solid border-[#e4e4e4];
 }
-.profileContent{
-  @apply basis-[55%] text-[#4f4f4f] font-inter font-normal
+.profileContent {
+  @apply text-sm md:text-base basis-[55%] text-[#4f4f4f] font-inter font-normal;
 }
-::placeholder{
+.InputField {
+  @apply text-sm md:text-base outline-none border-[1px] border-solid border-[#8ccdff] shadow-[0px_0px_10px_-2px_#86c9fd] rounded py-1.5 px-2;
+}
+::placeholder {
   font-style: italic;
 }
-.input{
+.input {
   transition: all 0.2s ease-in-out; /* changed the timing to show the effect */
   /* border: 4px solid transparent; */
 }
 .input:focus {
   /* transform: scale(0.4) */
   outline: none;
-  border-color: #B8D9EF;
+  border-color: #b8d9ef;
 }
-.box_shaddow{
+.box_shaddow {
   box-shadow: 0px 2px 16.9px 0px rgba(0, 0, 0, 0.08);
 }
-.gradient_bg{
-  background: linear-gradient(94deg, #EA4B98 7.56%, #F6722B 98.9%)
+.gradient_bg {
+  background: linear-gradient(94deg, #ea4b98 7.56%, #f6722b 98.9%);
 }

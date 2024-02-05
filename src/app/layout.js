@@ -1,5 +1,7 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "./utils/Toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({
   weight: ["300", "400", "500", "600"],
@@ -21,7 +23,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${poppins.variable}`}>
+        {children}
+        <ToastContainer/>
+      </body>
     </html>
   );
 }

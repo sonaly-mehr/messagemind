@@ -7,9 +7,9 @@ import { TiWorld } from "react-icons/ti";
 
 const ProfilePreview = ({ file }) => {
   return (
-    <div className="basis-[35%] flex py-5 pl-10">
+    <div className="md:basis-[35%] flex py-5 md:pl-10">
       <div className="w-full">
-        <h3 className="subHeading">Profile Preview</h3>
+        <h2 className="heading">Profile Preview</h2>
         <div className="bg-[#29D4B9] w-full mt-7 relative">
           <div className="flex justify-center">
             <Image
@@ -18,7 +18,7 @@ const ProfilePreview = ({ file }) => {
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: "200px", height: "200px" }}
+              style={{ width: "250px", height: "auto" }}
               unoptimized={true}
             />
           </div>

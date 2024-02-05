@@ -27,9 +27,7 @@ export default function Login() {
             <Image src={logo} alt="" unoptimized={true} />
           </div>
           <div className="box_shaddow bg-white border-[1px] border-solid border-[#F2F4F5] rounded-2xl px-7 md:px-16 py-8">
-            <h2 className="heading mb-3 md:mb-8">
-              Login
-            </h2>
+            <h2 className="heading mb-3 md:mb-8 text-center">Login</h2>
             <form action="">
               <div className="flex flex-col gap-5">
                 <FormInput
@@ -70,12 +68,16 @@ export default function Login() {
                 </Link>
               </div>
               <Link href="/welcome">
-              <SubmitButton type="submit" text="Login"/>
+                <SubmitButton
+                  type="submit"
+                  text="Login"
+                  class="w-full py-3 md:py-3.5"
+                />
               </Link>
             </form>
           </div>
 
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </HalfColoredContainer>
