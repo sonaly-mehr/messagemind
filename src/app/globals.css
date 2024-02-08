@@ -36,17 +36,18 @@ body {
   @apply text-sm md:text-base basis-[55%] text-[#4f4f4f] font-inter font-normal;
 }
 .InputField {
-  @apply text-sm md:text-base outline-none border-[1px] border-solid border-[#8ccdff] shadow-[0px_0px_10px_-2px_#86c9fd] rounded py-1.5 px-2;
+  @apply text-sm md:text-base;
+}
+.profile input:focus{
+  @apply outline-none border-[1px] border-solid border-[#8ccdff] shadow-[0px_0px_10px_-2px_#86c9fd] rounded py-1.5 px-2
 }
 ::placeholder {
   font-style: italic;
 }
 .input {
-  transition: all 0.2s ease-in-out; /* changed the timing to show the effect */
-  /* border: 4px solid transparent; */
+  transition: all 0.2s ease-in-out;
 }
 .input:focus {
-  /* transform: scale(0.4) */
   outline: none;
   border-color: #b8d9ef;
 }
@@ -55,4 +56,11 @@ body {
 }
 .gradient_bg {
   background: linear-gradient(94deg, #ea4b98 7.56%, #f6722b 98.9%);
+}
+input:checked{
+  background-color: black !important;
+  border: 0px;
+}
+.ripple{
+  display: none !important;
 }

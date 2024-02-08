@@ -53,13 +53,7 @@ export default function Login() {
               </div>
 
               <div className="flex justify-between items-center my-2.5">
-                <Checkbox
-                  label={
-                    <Typography className="font-poppins italic text-[#667085] font-normal text-xs md:text-base">
-                      Remember Me
-                    </Typography>
-                  }
-                />
+                <Checkbox  label={<Typography>Remember Me</Typography>} />
                 <Link
                   href="/forgot-password"
                   className="text-[#55A0DE] font-inter font-normal italic text-xs md:text-base"
@@ -78,6 +72,7 @@ export default function Login() {
           </div>
 
           <Footer />
+          
         </div>
       </div>
     </HalfColoredContainer>

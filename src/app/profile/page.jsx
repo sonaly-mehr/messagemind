@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import profile from "../../assets/logo-search-grid-1x.png";
 import { LuPencilLine } from "react-icons/lu";
 import ProfilePreview from "@/components/view/ProfilePreview/page";
 import SubmitButton from "@/components/ui/Button";
 
 const Profile = () => {
+  const ref = useRef(null);
   const [about, setAbout] = useState(false);
   const [address, setAddress] = useState(false);
   const [description, setDescription] = useState(false);
@@ -23,9 +24,10 @@ const Profile = () => {
   function getFile(event) {
     setFile(URL.createObjectURL(event.target.files[0]));
   }
+
   return (
     <div>
-      <div className="md:flex w-[90%] m-auto h-full pb-5">
+      <div className="md:flex w-[90%] m-auto h-full pb-16 md:pb-5 relative profile">
         <div className="md:basis-[65%] md:border-r-[1px] border-solid border-[#e4e4e4] py-5 pl-2 pr-2 md:pl-10 md:pr-24">
           <h2 className="heading">WhatsApp Business Profile</h2>
           <div className="contentLayout mt-12 md:ml-8">
@@ -49,15 +51,15 @@ const Profile = () => {
                 <div className="flex justify-center">
                   <SubmitButton
                     type="button"
-                    text="Chnage Profile Picture"
-                    class="py-3 md:py-3.5"
+                    text="Chanage Profile Picture"
+                    class="p-3"
                   />
                 </div>
                 <input
                   type="file"
                   name="myfile"
                   onChange={getFile}
-                  className="absolute left-[73px] top-[23px] opacity-0"
+                  className="absolute left-[78px] top-[12px] opacity-0 h-[55px] cursor-pointer"
                 />
               </div>
             </div>
@@ -68,20 +70,19 @@ const Profile = () => {
               <h6 className="profileSubHeading">About Text</h6>
             </div>
             {about ? (
-              <input
-                type="text"
-                defaultValue="Available 24/7"
-                className="profileContent InputField"
-              />
-            ) : (
-              <span className="profileContent">Available 24/7</span>
-            )}
+            <input
+              type="text"
+              autoFocus 
+              defaultValue="Available 24/7"
+              className="profileContent InputField"
+            />
+             ) : (
+               <span className="profileContent">Available 24/7</span>
+            )} 
             <span className="basis-[5%]">
               <LuPencilLine
                 className="cursor-pointer ml-1"
-                onClick={() => {
-                  setAbout(!about);
-                }}
+                onClick={()=> setAbout(!about)}
               />
             </span>
           </div>
@@ -97,6 +98,7 @@ const Profile = () => {
                 <input
                   type="text"
                   defaultValue="N/A"
+                  autoFocus 
                   className="profileContent InputField"
                 />
               ) : (
@@ -120,6 +122,7 @@ const Profile = () => {
               {description ? (
                 <input
                   type="text"
+                  autoFocus 
                   defaultValue={`${descp.slice(0, 45)}..`}
                   className="profileContent InputField"
                 />
@@ -144,6 +147,7 @@ const Profile = () => {
               {email ? (
                 <input
                   type="text"
+                  autoFocus 
                   defaultValue="example@yahoo.com"
                   className="profileContent InputField"
                 />
@@ -166,6 +170,7 @@ const Profile = () => {
               {webPrimary ? (
                 <input
                   type="text"
+                  autoFocus 
                   defaultValue="https://example.com"
                   className="profileContent InputField"
                 />
@@ -188,6 +193,7 @@ const Profile = () => {
               {webSecondary ? (
                 <input
                   type="text"
+                  autoFocus 
                   defaultValue="N/A"
                   className="profileContent InputField"
                 />
@@ -212,6 +218,7 @@ const Profile = () => {
               {business ? (
                 <input
                   type="text"
+                  autoFocus 
                   defaultValue="Professional Services"
                   className="profileContent InputField"
                 />
@@ -228,7 +235,7 @@ const Profile = () => {
               </span>
             </div>
           </div>
-          <div className="flex justify-center md:mt-5">
+          <div className="flex justify-center md:mt-5 absolute md:static bottom-0 left-1/2 translate-x-[-50%] md:translate-x-0 ">
             <SubmitButton type="button" text="Submit" class="py-3 md:py-3.5" />
           </div>
         </div>
