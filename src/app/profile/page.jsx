@@ -46,6 +46,7 @@ const Profile = () => {
                   className="rounded"
                   unoptimized={true}
                 />
+                {/*  */}
               </div>
               <div class="relative overflow-hidden inline-block">
                 <div className="flex justify-center">
