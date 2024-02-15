@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import HalfColoredContainer from "@/components/ui/HalfColoredContainer";
-import Footer from "@/components/view/Footer/page";
 import { Checkmark } from "react-checkmark";
 import SubmitButton from "@/components/ui/Button";
 import Link from "next/link";
