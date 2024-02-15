@@ -1,11 +1,16 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import HalfColoredContainer from "@/components/ui/HalfColoredContainer";
 import { Checkmark } from "react-checkmark";
 import SubmitButton from "@/components/ui/Button";
 import Link from "next/link";
 
-const ForgotPassword = () => {
+const SuccessfulPage = () => {
+  useEffect(()=> {
+    if (typeof window !== 'undefined') {
+      console.log('window.innerHeight', window.innerHeight);
+  }
+  }, [])
   return (
     <HalfColoredContainer>
       <div className="w-[90%] md:w-2/5 m-auto h-screen flex flex-col justify-center relative top-0 md:top-[-50px] z-30">
@@ -29,4 +34,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default SuccessfulPage;
