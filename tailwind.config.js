@@ -10,11 +10,13 @@ module.exports = withMT({
     extend: {
       colors: {
         dark: "#222222",
-        gray: "#667085"
+        gray: "#667085",
+        pink: "#EA4B98"
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
         poppins: ["var(--font-poppins)"],
+        montserrat: ["var(--font-montserrat)"],
       },
     },
   },
